@@ -33,3 +33,14 @@ document.getElementById('input').addEventListener('keyup', function(event) {
     document.getElementById('output').value = out
 
 })
+
+document.getElementById('copy').addEventListener('click', function(event) {
+  let out =  document.getElementById('output')
+  try {
+    out.focus()
+    out.select()
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+  } catch (err) {
+  }
+});
